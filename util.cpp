@@ -23,7 +23,7 @@ void ecrit(const string& nomFichier, const VectorXf& t, const MatrixXf& exact, c
     fichier << "# \n";
 
     for (size_t i = 0; i < t.size(); ++i) {
-        fichier << t(i) << "\t" << exact(i,0) << "\t" << exact(i,1) << "\t" << estime(i,0) << "\t" << estime(i,1) << "\t" << exact.col(i) - estime.col(i)<< "\n";
+        fichier << t(i) << "\t" << exact(0,i) << "\t" << exact(1,i) << "\t" << estime(0,i) << "\t" << estime(1,i) << "\t" << exact.col(i) - estime.col(i)<< "\n";
     }
 
     fichier.close() ;
